@@ -1,0 +1,27 @@
+{
+  "name": "ROS 2 Jazzy",
+  "image": "osrf/ros:jazzy-desktop",
+  "workspaceFolder": "/ros2_ws",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/ros2_ws,type=bind",
+  "containerEnv": {
+    "DISPLAY": "host.docker.internal:0",
+    "ROS_DOMAIN_ID": "42"
+  },
+  "runArgs": [
+    "--network=host"
+  ],
+  "postCreateCommand": "echo 'source /opt/ros/jazzy/setup.bash' >> ~/.bashrc",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "twxs.cmake",
+        "donjayamanne.python-extension-pack",
+        "ms-iot.vscode-ros",
+        "eamodio.gitlens"
+      ]
+    }
+  },
+  "shutdownAction": "stopContainer"
+}
+
